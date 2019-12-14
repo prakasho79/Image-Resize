@@ -1,0 +1,169 @@
+[2019-12-12 13:24:03 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-12 13:24:03 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-12 13:24:03 +0000] [1] [INFO] Using worker: sync
+[2019-12-12 13:24:03 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-13 04:41:54 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-13 04:41:54 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-13 04:41:54 +0000] [1] [INFO] Using worker: sync
+[2019-12-13 04:41:54 +0000] [10] [INFO] Booting worker with pid: 10
+[2019-12-13 05:04:52 +0000] [1] [INFO] Handling signal: term
+[2019-12-13 05:04:52 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2019-12-13 05:04:52 +0000] [1] [INFO] Shutting down: Master
+[2019-12-13 05:04:56 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-13 05:04:56 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-13 05:04:56 +0000] [1] [INFO] Using worker: sync
+[2019-12-13 05:04:56 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-13 05:08:20 +0000] [1] [INFO] Handling signal: term
+[2019-12-13 05:08:20 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-13 05:08:20 +0000] [1] [INFO] Shutting down: Master
+[2019-12-13 05:08:24 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-13 05:08:24 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-13 05:08:24 +0000] [1] [INFO] Using worker: sync
+[2019-12-13 05:08:24 +0000] [8] [INFO] Booting worker with pid: 8
+[2019-12-13 07:09:29 +0000] [1] [INFO] Handling signal: term
+[2019-12-13 07:09:29 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2019-12-13 07:09:29 +0000] [1] [INFO] Shutting down: Master
+[2019-12-13 07:09:33 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-13 07:09:33 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-13 07:09:33 +0000] [1] [INFO] Using worker: sync
+[2019-12-13 07:09:33 +0000] [10] [INFO] Booting worker with pid: 10
+[2019-12-13 09:40:48 +0000] [1] [INFO] Handling signal: term
+[2019-12-13 09:40:48 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2019-12-13 09:40:48 +0000] [1] [INFO] Shutting down: Master
+[2019-12-14 04:15:01 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-14 04:15:01 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-14 04:15:01 +0000] [1] [INFO] Using worker: sync
+[2019-12-14 04:15:01 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-14 04:43:02 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:7)
+[2019-12-14 04:43:04 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-14 04:43:05 +0000] [18] [INFO] Booting worker with pid: 18
+[2019-12-14 04:43:47 +0000] [1] [INFO] Handling signal: term
+[2019-12-14 04:43:47 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2019-12-14 04:43:48 +0000] [1] [INFO] Shutting down: Master
+[2019-12-14 05:34:16 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-14 05:34:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-14 05:34:16 +0000] [1] [INFO] Using worker: sync
+[2019-12-14 05:34:16 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-14 05:46:10 +0000] [1] [INFO] Handling signal: term
+[2019-12-14 05:46:10 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-14 05:46:10 +0000] [1] [INFO] Shutting down: Master
+[2019-12-14 05:46:13 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-14 05:46:13 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-14 05:46:13 +0000] [1] [INFO] Using worker: sync
+[2019-12-14 05:46:13 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-14 05:50:58 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 05:51:24 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 05:54:42 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 05:55:43 +0000] [1] [INFO] Handling signal: term
+[2019-12-14 05:55:43 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-14 05:55:43 +0000] [1] [INFO] Shutting down: Master
+[2019-12-14 05:55:46 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-14 05:55:46 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-14 05:55:46 +0000] [1] [INFO] Using worker: sync
+[2019-12-14 05:55:46 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-14 05:55:58 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 05:59:26 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 06:04:29 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 06:05:11 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 06:05:34 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 06:56:26 +0000] [1] [INFO] Handling signal: term
+[2019-12-14 06:56:26 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-14 06:56:26 +0000] [1] [INFO] Shutting down: Master
+[2019-12-14 06:56:29 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2019-12-14 06:56:29 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2019-12-14 06:56:29 +0000] [1] [INFO] Using worker: sync
+[2019-12-14 06:56:29 +0000] [7] [INFO] Booting worker with pid: 7
+[2019-12-14 06:57:55 +0000] [7] [ERROR] Error handling request /create
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 279, in __call__
+    body, length = self._get_body(resp, env.get('wsgi.file_wrapper'))
+  File "/usr/local/lib/python3.6/site-packages/falcon/api.py", line 721, in _get_body
+    body = body.encode('utf-8')
+AttributeError: 'dict' object has no attribute 'encode'
+[2019-12-14 09:55:50 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:7)
+[2019-12-14 09:55:50 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2019-12-14 09:55:50 +0000] [18] [INFO] Booting worker with pid: 18

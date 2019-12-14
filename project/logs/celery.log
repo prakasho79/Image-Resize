@@ -1,0 +1,2 @@
+[2019-12-14 07:15:42,598: INFO/MainProcess] Received task: app.tasks.resize_image[c0b6eb27-773b-4ef9-a243-e22b19d3fc96]  
+[2019-12-14 07:15:42,616: INFO/ForkPoolWorker-1] Task app.tasks.resize_image[c0b6eb27-773b-4ef9-a243-e22b19d3fc96] succeeded in 0.017345635000310722s: {'Original': {'file_path': './images/uploaded/Square_on_hyperbolic_plane.png', 'Size': (613, 624)}, 'Thumbnail': {'file_path': './images/thumbnail/Square_on_hyperbolic_plane.png', 'Size': (99, 100)}}
