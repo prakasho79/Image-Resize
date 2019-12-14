@@ -1,8 +1,50 @@
-========================= Build & Run:
-Build and run the services (i.e docker container) using docker compose from the parent folder.
+Steps to run the application:
 
-# Run from the parent image-resize directory.
+Step 1: Clone the repo: 
+git clone https://github.com/prakasho79/Image-Resize.git
+
+Step 2: Build the docker images & run the conatiner:
 sudo docker-compose up -d --build
+
+Step 3: Use postman / curl to invoke the endpoints:
+For testing the endpoints we can either use postman or curl command from CLI or mointor the tasks from Flower (Web based UI. See section for Monitor)
+
+Step 3.1
+Post an image using curl / postman. The Celery task will be created and it will process the file in background asynchronously. It will return the Celery task Id.
+
+curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/dogs_1280p_0.jpg
+## Output - 
+{
+    "status": "success",
+    "data": {
+        "task_id": "bddea89f-4a70-4951-afa3-3551844d4533"
+    }
+}
+
+Step 3.2
+Get the status of the job using the celery task Id using curl / postman.
+
+curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
+## Output - 
+{
+    "status": "SUCCESS",
+    "result": {
+        "Original": {
+            "file_path": "./bucket/uploaded_img/Square_on_hyperbolic_plane.png",
+            "Size": [
+                613,
+                624
+            ]
+        },
+        "Thumbnail": {
+            "file_path": "./bucket/thumbnail_img/Square_on_hyperbolic_plane.png",
+            "Size": [
+                99,
+                100
+            ]
+        }
+    }
+}
 
 ========================= Architecture:
 The architecture used is queue based worker employing Celery which is an asynchronous task queue/job queue based on distributed message passing. Internally Celery uses Redis as message broker.
@@ -32,46 +74,6 @@ The containers can be deployed on-prem using a Docker Swarm / Mesos cluster setu
 On-Cloud deployment:
 The containers can be deployed on Kubernetes cluster on the pods in either AWS, Azure or GCP with NGNIX accepting incoming request acting as reverse-proxy.
 
-========================= Tests:
-For testing the endpoints we can either use postman or curl command from CLI or mointor the tasks from Flower (Web based UI. See section for Monitor)
-# Run from the parent image-resize directory.
-
-Step 1
-Post an image using curl / postman. The Celery task will be created and it will process the file in background asynchronously. It will return the Celery task Id.
-
-curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/dogs_1280p_0.jpg
-## Output - 
-{
-    "status": "success",
-    "data": {
-        "task_id": "bddea89f-4a70-4951-afa3-3551844d4533"
-    }
-}
-
-Step 2
-Get the status of the job using the celery task Id using curl / postman.
-
-curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
-## Output - 
-{
-    "status": "SUCCESS",
-    "result": {
-        "Original": {
-            "file_path": "./bucket/uploaded_img/Square_on_hyperbolic_plane.png",
-            "Size": [
-                613,
-                624
-            ]
-        },
-        "Thumbnail": {
-            "file_path": "./bucket/thumbnail_img/Square_on_hyperbolic_plane.png",
-            "Size": [
-                99,
-                100
-            ]
-        }
-    }
-}
 
 ========================== Logging:
 > gunicorn_access.log - All access to gunicorn server are logged.
