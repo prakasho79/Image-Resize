@@ -1,23 +1,28 @@
-# Project Description:
+# About The Project
+
 A JSON-based REST API service which resizes images into 100x100px thumbnails.
 
-## Steps to run the application:
-
-Step 1: Clone the repo: 
+## Installation
+1. Clone the repo: 
+```bash
 git clone https://github.com/prakasho79/Image-Resize.git
+```
 
-Step 2: Build the docker images & run the conatiner:
+2. Use the [docker-compose](https://docs.docker.com/compose/) to build & run the application.
+
+```bash
 sudo docker-compose up -d --build
+```
 
-Step 3: Use postman / curl to invoke the endpoints:
-For testing the endpoints we can either use postman or curl command from CLI or mointor the tasks from Flower (Web based UI. See section for Monitor)
+## Test
 
-Step 3.1
-Post an image using curl / postman. The Celery task will be created and it will process the file in background asynchronously. It will return the Celery task Id.
+To test the endpoints we can either use postman or curl command from CLI or mointor the tasks from Flower (Web based UI. See section for Monitor)
+
+1. Upload a image
 ```
 curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/dogs_1280p_0.jpg
 ```
-### Output -
+#### Output -
 ```
 {
     "status": "success",
@@ -27,13 +32,13 @@ curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-dat
 }
 ```
 
-Step 3.2
-Get the status of the job using the celery task Id using curl / postman.
+2. Query Job - 
+Get the status of the job using the celery task Id
 ```
 curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
 ```
-### Output - 
-```
+#### Output - 
+``` bash
 {
     "status": "SUCCESS",
     "result": {
@@ -53,9 +58,10 @@ curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
         }
     }
 }
-'''
+```
 
-## Architecture:
+## Architecture
+
 The architecture used is queue based worker employing Celery which is an asynchronous task queue/job queue based on distributed message passing. Internally Celery uses Redis as message broker.
 The application uses tool called Flower which will help to monitoring real time Celery Events. Task progress and history.
 
@@ -65,22 +71,24 @@ There are number of things we could do to scale horizontally. Some of them are d
 * We can have distributed cluster setup for each of these containers using Kubernetes or Docker Swarm or Mesos.
 
 
-## Components:
+##  Components
+
 The application has the following services / components running -
-> Web Container - The main JSON / REST style application running on Gunicorn (WSGI) server.
-> Celery Container - The distributed task queue.
-> Flower Container - The tool for monitoring real time Celery Events. Task progress and history.
-> Redis Container - The message broker
+* Web Container - The main JSON / REST style application running on Gunicorn (WSGI) server.
+* Celery Container - The distributed task queue.
+* Flower Container - The tool for monitoring real time Celery Events. Task progress and history.
+* Redis Container - The message broker
 
 The request hits the Gunicorn server, where the middleware multipart parses the form data to get the file. The file is submitted to celery task. The background processing happens
 asynchronously. The celery internally use message broker (Redis) to submit the task to message queue and the worker will consume and process the task.
 
 ### Deployment:
 We can have either on-prem or on-cloud deployment.
-On-prem deployment:
+
+* On-prem deployment:
 The containers can be deployed on-prem using a Docker Swarm / Mesos cluster setup with NGNIX accepting incoming request acting as reverse-proxy.
 
-On-Cloud deployment:
+* On-Cloud deployment:
 The containers can be deployed on Kubernetes cluster on the pods in either AWS, Azure or GCP with NGNIX accepting incoming request acting as reverse-proxy.
 
 
@@ -90,7 +98,7 @@ The containers can be deployed on Kubernetes cluster on the pods in either AWS, 
 * celery.log - Contains the log out from celery tasks
 
 ## Monitor Tasks:
-* Launch Flower - http://localhost:5555
+* Launch [Flower](http://localhost:5555)
 * Navigate to Tasks tab to see all running Celery tasks
 
 ## Limitations:
@@ -105,3 +113,10 @@ The containers can be deployed on Kubernetes cluster on the pods in either AWS, 
 * Doing a performace load tesing (probably using Taurus)
 * NGnix / Nginx Plus needs to be used as reverse-proxy to secure the request made by the client program.
 * All the constants (static key/value pair) should be defined in the .ini file
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
