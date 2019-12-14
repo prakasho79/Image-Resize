@@ -20,7 +20,7 @@ To test the endpoints we can either use postman or curl command from CLI or moin
 
 1. Upload a image
 ```
-curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/dogs_1280p_0.jpg
+curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/Square_on_hyperbolic_plane.png
 ```
 #### Output -
 ```
@@ -43,14 +43,14 @@ curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
     "status": "SUCCESS",
     "result": {
         "Original": {
-            "file_path": "./bucket/uploaded_img/Square_on_hyperbolic_plane.png",
+            "file_path": "./images/uploaded/Square_on_hyperbolic_plane.png",
             "Size": [
                 613,
                 624
             ]
         },
         "Thumbnail": {
-            "file_path": "./bucket/thumbnail_img/Square_on_hyperbolic_plane.png",
+            "file_path": "./images/thumbnail/Square_on_hyperbolic_plane.png",
             "Size": [
                 99,
                 100
