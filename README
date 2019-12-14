@@ -14,26 +14,26 @@ For testing the endpoints we can either use postman or curl command from CLI or 
 
 Step 3.1
 Post an image using curl / postman. The Celery task will be created and it will process the file in background asynchronously. It will return the Celery task Id.
-'''
+```
 curl -X POST "http://localhost:8000/create" -H "Content-Type: multipart/form-data" -H "Accept: application/json" -F image_data=@./dataset/dogs_1280p_0.jpg
-'''
+```
 ### Output -
-'''
+```
 {
     "status": "success",
     "data": {
         "task_id": "bddea89f-4a70-4951-afa3-3551844d4533"
     }
 }
-'''
+```
 
 Step 3.2
 Get the status of the job using the celery task Id using curl / postman.
-'''
+```
 curl http://localhost:8000/status/bddea89f-4a70-4951-afa3-3551844d4533
-'''
+```
 ### Output - 
-'''
+```
 {
     "status": "SUCCESS",
     "result": {
