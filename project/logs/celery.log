@@ -1,2 +1,9 @@
 [2019-12-14 07:15:42,598: INFO/MainProcess] Received task: app.tasks.resize_image[c0b6eb27-773b-4ef9-a243-e22b19d3fc96]  
 [2019-12-14 07:15:42,616: INFO/ForkPoolWorker-1] Task app.tasks.resize_image[c0b6eb27-773b-4ef9-a243-e22b19d3fc96] succeeded in 0.017345635000310722s: {'Original': {'file_path': './images/uploaded/Square_on_hyperbolic_plane.png', 'Size': (613, 624)}, 'Thumbnail': {'file_path': './images/thumbnail/Square_on_hyperbolic_plane.png', 'Size': (99, 100)}}
+[2019-12-14 13:04:46,863: INFO/MainProcess] Connected to redis://redis:6379/0
+[2019-12-14 13:04:46,872: INFO/MainProcess] mingle: searching for neighbors
+[2019-12-14 13:04:47,892: INFO/MainProcess] mingle: all alone
+[2019-12-14 13:04:47,918: INFO/MainProcess] celery@df4b12c37f37 ready.
+[2019-12-14 13:04:51,617: INFO/MainProcess] Events of group {task} enabled by remote.
+[2019-12-14 13:05:05,529: INFO/MainProcess] Received task: app.tasks.resize_image[5aed8ed9-7119-45da-9453-7d0e60ef3998]  
+[2019-12-14 13:05:05,589: INFO/ForkPoolWorker-1] Task app.tasks.resize_image[5aed8ed9-7119-45da-9453-7d0e60ef3998] succeeded in 0.05832069299867726s: {'Original': {'file_path': './images/uploaded/Square_on_hyperbolic_plane.png', 'Size': (613, 624)}, 'Thumbnail': {'file_path': './images/thumbnail/Square_on_hyperbolic_plane.png', 'Size': (99, 100)}}
